@@ -1,4 +1,4 @@
-const attributes = {
+const attr = {
   health: {
     value: 75,
     max: 100,
@@ -21,7 +21,7 @@ const attributes = {
 }
 
 const resources = (s, w, p) => ({
-  seed: {
+  food: {
     type: 'sunflower',
     count: s,
   },
@@ -37,9 +37,13 @@ const resources = (s, w, p) => ({
 
 const initialState = () => ({
   roomId: 'main',
+
+  clicks: 0,
   started: new Date(),
 
-  attributes,
+  attr,
+
+  temperature: 41,
 
   resources: resources(0, 0, 0),
 
@@ -47,21 +51,45 @@ const initialState = () => ({
 
   rooms: {
     main: {
-      state: 'idle',
+      buttons: [
+        {
+          class: ['bg-red-600'],
+          icon: {
+            type: 'utensils',
+            style: {
+              color: '#f6e05e',
+            },
+          },
+        },
+        {
+          class: ['bg-red-600'],
+          icon: {
+            type: 'cookie',
+            style: {
+              color: '#896031',
+            },
+          },
+        },
+      ],
       resources: resources(5, 5, 0),
+      state: 'idle',
+      temperature: 23,
     },
   },
 })
 
-export const actions = {
-  setCurrentRoom(state, { id }) {
-    state.roomId = id
+export const getters = {
+  room(state) {
+    return state.rooms[state.roomId]
   },
 }
 
-export const getters = {
-  room() {
-    return this.rooms[this.roomId]
+export const mutations = {
+  click(state, { button }) {
+    state.clicks++
+  },
+  setCurrentRoom(state, { id }) {
+    state.roomId = id
   },
 }
 

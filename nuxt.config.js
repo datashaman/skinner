@@ -34,7 +34,18 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    {
+      src: '~/plugins/localStorage',
+      ssr: false,
+    },
+    {
+      src: '~/plugins/thermometer',
+    },
+    {
+      src: '~/plugins/observables',
+    },
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -59,10 +70,11 @@ export default {
             set: '@fortawesome/free-solid-svg-icons',
             icons: [
               'faBrain',
-              'faEgg',
+              'faCookie',
               'faHeart',
               'faPoo',
               'faTint',
+              'faUtensils',
               //
             ],
           },
@@ -72,6 +84,7 @@ export default {
     [
       'nuxt-purgecss',
       {
+        whitelist: ['fa'],
         whitelistPatterns: [/^fa-/, /-fa$/],
       },
     ],

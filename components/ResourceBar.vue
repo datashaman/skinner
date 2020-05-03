@@ -1,8 +1,8 @@
 <template>
   <div class="resource-bar">
     <div class="mb-8">
-      <fa class="icon-seed" icon="egg" />
-      <div class="count">{{ resources.seed.count }}</div>
+      <fa class="icon-food" icon="utensils" />
+      <div class="count">{{ resources.food.count }}</div>
     </div>
     <div class="mb-8">
       <fa class="icon-water" icon="tint" />
@@ -27,7 +27,7 @@ export default {
 .resource-bar {
   @apply leading-snug text-right text-4xl;
 }
-.icon-seed {
+.icon-food {
   @apply text-yellow-400;
   position: relative;
   right: -3px;

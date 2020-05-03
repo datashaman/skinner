@@ -39,9 +39,15 @@
     "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-plugin-prettier": "^3.1.2",
     "husky": "^4.0.0",
+    "kefir": "^3.8.6",
     "lint-staged": "^10.0.0",
     "prettier": "^1.19.1",
     "stylelint": "^10.1.0",
-    "vuex-persistedstate": "^3.0.1"
+    "typescript": ">=3.7.0-beta",
+    "vue": "^2.0.0",
+    "vuejs-thermometer": "^0.1.2",
+    "vuex": "^2.0.0",
+    "vuex-persistedstate": "^3.0.1",
+    "webpack": "^4.0.0"
   }
 }
