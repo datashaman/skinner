@@ -9,5 +9,6 @@ export default {
   },
   beforeDestroy() {
     this.subscriptions.forEach(s => s.unsubscribe())
+    delete this.subscriptions
   },
 }
