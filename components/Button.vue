@@ -6,8 +6,10 @@
 </template>
 <script>
 import Kefir from 'kefir'
+import subscriptions from '~/mixins/subscriptions'
 
 export default {
+  mixins: [subscriptions],
   props: {
     room: {
       type: Object,
@@ -32,21 +34,24 @@ export default {
       button: this.button,
     }))
 
-    this.$observables.pool.plug(clicks)
+    this.$clicks.plug(clicks)
 
-    const clicksCount = clicks.map(e => 1)
+    this.subscribe(
+      clicks
+        .map(e => 1)
+        .scan((prev, next) => prev + next, 0)
+        .observe(count => {
+          this.count = count
+        })
+    )
 
-    clicksCount
-      .scan((prev, next) => prev + next, 0)
-      .observe(count => {
-        this.count = count
-      })
-
-    clicksCount
-      .bufferBy(Kefir.withInterval(1000, emitter => emitter.emit()))
-      .observe(clicks => {
-        this.cps = clicks.length
-      })
+    this.subscribe(
+      clicks
+        .bufferBy(Kefir.withInterval(1000, emitter => emitter.emit()))
+        .observe(clicks => {
+          this.cps = clicks.length
+        })
+    )
   },
 }
 </script>

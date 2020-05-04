@@ -1,22 +1,24 @@
 const attr = {
   health: {
-    value: 75,
     max: 100,
-    color: 'red',
+    maxClass: ['bg-red-300'],
     icon: {
       type: 'heart',
-      color: 'red',
+      class: ['text-red-700'],
     },
+    value: 75,
+    valueClass: ['bg-red-500'],
   },
 
   sanity: {
-    value: 42,
     max: 100,
-    color: 'gray',
+    maxClass: ['bg-gray-300'],
     icon: {
       type: 'brain',
-      color: 'gray',
+      class: ['text-gray-700'],
     },
+    value: 42,
+    valueClass: ['bg-gray-500'],
   },
 }
 

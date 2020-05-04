@@ -1,5 +1,5 @@
 <template>
-  <div class="screen border-solid bg-white h-80">
+  <div class="screen">
     &nbsp;
   </div>
 </template>
@@ -8,3 +8,8 @@ export default {
   //
 }
 </script>
+<style scoped>
+.screen {
+  @apply border-solid bg-white;
+}
+</style>

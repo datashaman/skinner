@@ -22,8 +22,8 @@ export default {
   },
 }
 </script>
-<style>
+<style scoped>
 .button-bar {
-  @apply bg-gray-300 border-solid border-4 border-gray-500 p-4 rounded-lg;
+  @apply bg-gray-300 border-solid border-4 border-gray-500 p-4 rounded-lg inline-block;
 }
 </style>

@@ -25,21 +25,15 @@ export default {
 </script>
 <style scoped>
 .resource-bar {
-  @apply leading-snug text-right text-4xl;
+  @apply leading-snug text-4xl;
 }
 .icon-food {
   @apply text-yellow-400;
-  position: relative;
-  right: -3px;
 }
 .icon-water {
   @apply text-blue-400;
-  position: relative;
-  right: -2px;
 }
 .icon-poop {
-  position: relative;
-  right: -7px;
   color: #896031;
 }
 </style>

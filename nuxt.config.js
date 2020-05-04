@@ -43,7 +43,7 @@ export default {
       src: '~/plugins/thermometer',
     },
     {
-      src: '~/plugins/observables',
+      src: '~/plugins/clicks',
     },
   ],
   /*
