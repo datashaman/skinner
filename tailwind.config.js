@@ -2,6 +2,7 @@ module.exports = {
   important: false,
   plugins: [require('tailwindcss-animations')],
   prefix: '',
+  purge: false,
   separator: ':',
   theme: {
     animations: {

@@ -1,4 +1,4 @@
-# skinner
+# skinner-box
 
 > Life in the box.
 

@@ -1,6 +1,6 @@
 {
-  "name": "skinner",
-  "version": "1.0.0",
+  "name": "skinner-box",
+  "version": "0.1.0",
   "description": "Life in the box.",
   "author": "datashaman",
   "private": true,
@@ -50,5 +50,10 @@
     "vuex": "^3.1.3",
     "vuex-persistedstate": "^3.0.1",
     "webpack": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=v13.11.0",
+    "npm": ">=6.13.7",
+    "yarn": ">=1.22.4"
   }
 }
