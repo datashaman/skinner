@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex" @selectstart.prevent>
+  <div class="container flex animation-none" @selectstart.prevent>
     <div class="flex-none p-4">
       <div class="health-bar">
         <HealthBar :attr="attr.health" class="mb-4" />
@@ -23,7 +23,6 @@
 </template>
 <script>
 import { mapState } from 'vuex'
-import Kefir from 'kefir'
 
 import ButtonBar from '~/components/ButtonBar'
 import Feeder from '~/components/Feeder'
@@ -32,7 +31,7 @@ import ResourceBar from '~/components/ResourceBar'
 import Screen from '~/components/Screen'
 import Thermometer from '~/components/Thermometer'
 
-import subscriptions from '~/mixins/subscriptions'
+import kefir from '~/mixins/kefir'
 
 export default {
   components: {
@@ -43,7 +42,7 @@ export default {
     Screen,
     Thermometer,
   },
-  mixins: [subscriptions],
+  mixins: [kefir],
   data: () => ({
     cps: 0,
     subscriptions: [],
@@ -59,11 +58,9 @@ export default {
     )
 
     this.subscribe(
-      this.$clicks
-        .bufferBy(Kefir.withInterval(1000, emitter => emitter.emit()))
-        .observe(clicks => {
-          this.cps = clicks.length
-        })
+      this.bufferBySecond(this.$clicks).observe(clicks => {
+        this.cps = clicks.length
+      })
     )
   },
 }

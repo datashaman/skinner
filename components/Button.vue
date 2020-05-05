@@ -5,11 +5,10 @@
   </div>
 </template>
 <script>
-import Kefir from 'kefir'
-import subscriptions from '~/mixins/subscriptions'
+import kefir from '~/mixins/kefir'
 
 export default {
-  mixins: [subscriptions],
+  mixins: [kefir],
   props: {
     room: {
       type: Object,
@@ -29,12 +28,10 @@ export default {
     cps: 0,
   }),
   mounted() {
-    const clicks = Kefir.fromEvents(this.$refs.button, 'click', e => ({
+    const clicks = this.streamClickEvents(this.$refs.button, e => ({
       room: this.room,
       button: this.button,
     }))
-
-    this.$clicks.plug(clicks)
 
     this.subscribe(
       clicks
@@ -46,11 +43,9 @@ export default {
     )
 
     this.subscribe(
-      clicks
-        .bufferBy(Kefir.withInterval(1000, emitter => emitter.emit()))
-        .observe(clicks => {
-          this.cps = clicks.length
-        })
+      this.bufferBySecond(clicks).observe(clicks => {
+        this.cps = clicks.length
+      })
     )
   },
 }

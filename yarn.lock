@@ -8678,6 +8678,13 @@ table@^5.2.3:
     slice-ansi "^2.1.0"
     string-width "^3.0.0"
 
+tailwindcss-animations@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/tailwindcss-animations/-/tailwindcss-animations-2.0.0.tgz#6e12fe9c70f862f8ac228adf7256b26a4f7cd7c3"
+  integrity sha512-YLdhPiQeDtpnqWd0J70rvy08MDbsq+BBLrzMmPR1Pe6MJDFYDuk4CYGI14GVgj7xRBGkByzp/rAfBcUWD7zpng==
+  dependencies:
+    lodash "^4.17.15"
+
 tailwindcss@^1.3.4:
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.4.4.tgz#a866f281f99ee7058fa3301ef0ce34b16141deb6"
@@ -9387,11 +9394,6 @@ vuex-persistedstate@^3.0.1:
   dependencies:
     deepmerge "^4.2.2"
     shvl "^2.0.0"
-
-vuex@^2.0.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/vuex/-/vuex-2.5.0.tgz#20f0265ade6c9a5ac6724a405d3ffdb4726c9741"
-  integrity sha512-5oJPOJySBgSgSzoeO+gZB/BbN/XsapgIF6tz34UwJqnGZMQurzIO3B4KIBf862gfc9ya+oduY5sSkq+5/oOilQ==
 
 vuex@^3.1.3:
   version "3.3.0"
