@@ -85,7 +85,7 @@ export default {
       'nuxt-purgecss',
       {
         whitelist: ['fa'],
-        whitelistPatterns: [/^fa-/, /-fa$/],
+        whitelistPatterns: [/^bg-/, /^fa-/, /-fa$/],
       },
     ],
   ],
