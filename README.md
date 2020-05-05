@@ -1,6 +1,6 @@
 # skinner-box
 
-> Life in the box.
+> A combination puzzle, rhythm, clicker and dystopian nightmare game. For pigeons.
 
 ## Build Setup
 
